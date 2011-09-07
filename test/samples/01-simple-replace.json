@@ -1,0 +1,7 @@
+{
+    "input": "{0} for the money",
+    "output": "One for the money",
+    "args": [
+        "One"
+    ]
+}

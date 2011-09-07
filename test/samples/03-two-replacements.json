@@ -1,0 +1,8 @@
+{
+    "input": "{0} are the {1}",
+    "output": "We are the champions",
+    "args": [
+        "We",
+        "champions"
+    ]
+}
