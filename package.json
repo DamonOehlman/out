@@ -1,0 +1,29 @@
+{
+    "name": "out",
+    "description": "Tasty STDOUT",
+    "tags": ["console", "log", "stdout"],
+    "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+    "version": "0.0.1",
+    "main": "./lib/out",
+    
+    "engines": { "node": "0.4.x || 0.5.x" },
+    
+    "dependencies": {
+    },
+    
+    "devDependencies": {
+        "vows": "0.5.x"
+    },
+    
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/DamonOehlman/node-out.git"
+    },
+    
+    "bugs": {
+        "web": "http://github.com/DamonOehlman/node-out/issues"
+    },
+
+    "contributors": [
+    ]
+}
