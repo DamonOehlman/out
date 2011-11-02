@@ -3,7 +3,7 @@
     "description": "Tasty STDOUT",
     "tags": ["console", "log", "stdout"],
     "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "./lib/out",
     
     "engines": { "node": "0.4.x || 0.5.x" },
@@ -21,7 +21,7 @@
     },
     
     "bugs": {
-        "web": "http://github.com/DamonOehlman/node-out/issues"
+        "url": "http://github.com/DamonOehlman/node-out/issues"
     },
 
     "contributors": [
