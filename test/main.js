@@ -11,20 +11,21 @@ var suite = vows.describe('Out Tests'),
     };
     
 function createTest(sample) {
+    // replace sample output #[ placeholders with the correct text
+    sample.output = sample.output.replace(/\#\[/g, '\033[');
+    
     return function() {
-        var args = [].concat(sample.args);
-        
         // ensure we have input and output
         assert.ok(sample.input, 'Sample has input');
         assert.ok(sample.output, 'Sample has output');
         
-        // put the input into the args
-        args.unshift(sample.input);
-        
         // run out and check the output matches the expected
-        assert.equal(out.apply(null, args), sample.output);
+        assert.equal(out.apply(null, [sample.input].concat(sample.args)), sample.output);
     };
 }
+
+// set out to write to nothing
+out.to(null);
 
 // read the files in the samples directory and load into the suite
 fs.readdir(samplePath, function(err, files) {

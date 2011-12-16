@@ -7,14 +7,14 @@
     "stdout"
   ],
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "main": "./lib/out",
   "engines": {
     "node": ">= 0.4.x < 0.7.0"
   },
   "dependencies": {},
   "devDependencies": {
-    "vows": "0.5.x"
+    "vows": ">= 0.6.0"
   },
   "repository": {
     "type": "git",

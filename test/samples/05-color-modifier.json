@@ -1,4 +1,4 @@
 {
     "input": "!{green}green",
-    "output": "\\033[32mgreen\\033[39m"
+    "output": "#[32mgreen#[39m"
 }

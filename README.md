@@ -33,3 +33,28 @@ out('I\'m !{red}red!{} and I\'m !{green}green');
 ```
 
 That's pretty much all there is to it.
+
+## Delimited Modifiers
+
+You can specifier multiple modifiers in one modifier section:
+
+```js
+var out = require('out');
+out('!{red,underline}This will be red and underlined');
+```
+
+__NOTE:__ Delimiters of comma (,) space ( ) and plus (+) are all valid.
+
+## Redirecting out
+
+By default, out writes to `process.stdout` but can be redirected to other locations.  For instance, to direct nowhere, you can specify the following:
+
+```js
+var out = require('out');
+
+// send nowhere
+out.to(null);
+
+// output hi, nowhere
+out('hi');
+```

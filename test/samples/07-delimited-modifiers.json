@@ -1,0 +1,4 @@
+{
+    "input": "!{green,underline}green and underlined",
+    "output": "#[4m#[32mgreen and underlined#[39m#[24m"
+}
