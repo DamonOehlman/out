@@ -1,0 +1,4 @@
+{
+    "input": "!{grey}First Line\n!{green}Second Line\n!{red}Third Line",
+    "output": "#[90mFirst Line#[39m\n#[32mSecond Line#[39m\n#[31mThird Line#[39m"
+}
