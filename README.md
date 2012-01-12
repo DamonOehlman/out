@@ -45,6 +45,25 @@ out('!{red,underline}This will be red and underlined');
 
 __NOTE:__ Delimiters of comma (,) space ( ) and plus (+) are all valid.
 
+## Unicode Goodness
+
+From version `0.3.0` some handy unicode goodness is included.  If you want to output a unicode character as part of your string, you can include it's hex value in place of a named modifier.  For instance:
+
+```js
+out('!{2713}');
+```
+
+Would generate a check mark (✓).  Want a green check mark, no problem:
+
+```js
+out('!{2713,green}');
+```
+
+Now, I'm not terribly good at remembering unicode values, so additionally, some symbols have been defined:
+
+- tick / check : ✓
+- more as requested, added via pull requests
+
 ## Redirecting out
 
 By default, out writes to `process.stdout` but can be redirected to other locations.  For instance, to direct nowhere, you can specify the following:
