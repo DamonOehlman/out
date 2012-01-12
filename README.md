@@ -59,9 +59,17 @@ Would generate a check mark (✓).  Want a green check mark, no problem:
 out('!{2713,green}');
 ```
 
-Now, I'm not terribly good at remembering unicode values, so additionally, some symbols have been defined:
+Now, I'm not terribly good at remembering unicode values, so additionally, some symbols have been defined.  These can be accessed by replacing the unicode value with the symbol alias.  For instance, a green check using the alias:
 
-- tick / check : ✓
+```js
+out('!{check,green}');
+```
+
+__NOTE__: While the colour modifiers can be chained together in any order, you will need to make sure that any symbols appear at the start of the list to have them appropriately handled by the modifiers.
+
+The full list of symbol aliases is as follows:
+
+- tick / check : ✓ (0x2713)
 - more as requested, added via pull requests
 
 ## Redirecting out
