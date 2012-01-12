@@ -1,0 +1,4 @@
+{
+    "input": "!{tick|green}",
+    "output": "#[32m✓#[39m"
+}
