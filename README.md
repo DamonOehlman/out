@@ -65,7 +65,7 @@ Now, I'm not terribly good at remembering unicode values, so additionally, some 
 out('!{check,green}');
 ```
 
-__NOTE__: While the colour modifiers can be chained together in any order, you will need to make sure that any symbols appear at the start of the list to have them appropriately handled by the modifiers.
+__NOTE__: _While the colour modifiers can be chained together in any order, you will need to make sure that any symbols appear at the start of the list to have them appropriately handled by the modifiers._
 
 The full list of symbol aliases is as follows:
 
