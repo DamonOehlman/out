@@ -74,7 +74,7 @@ The full list of symbol aliases is as follows:
 
 ## Redirecting out
 
-By default, out writes to `process.stdout` but can be redirected to other locations.  For instance, to direct nowhere, you can specify the following:
+By default, out writes to `process.stderr` but can be redirected to other locations.  For instance, to direct nowhere, you can specify the following:
 
 ```js
 var out = require('out');
