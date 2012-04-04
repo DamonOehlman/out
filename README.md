@@ -2,6 +2,8 @@
 
 Yes, it's yet another Node.js console logging library.  Out takes inspiration from [colors.js](https://github.com/Marak/colors.js) and that is definitely a library worth a look IMO.
 
+<a href="http://travis-ci.org/#!/DamonOehlman/node-out"><img src="https://secure.travis-ci.org/DamonOehlman/node-out.png" alt="Build Status"></a>
+
 So why did I write out then?  Because it focuses on using string modifiers to influence formatted output rather than the getters that colors.js uses. This is purely a personal preference, but does mean that referencing an incorrect formatter will not result in an `undefined` string.
 
 ## Usage
