@@ -10,7 +10,7 @@
   "version": "0.4.1",
   "main": "./lib/out",
   "engines": {
-    "node": ">= 0.4.x < 0.7.0"
+    "node": ">= 0.4.x < 0.9.0"
   },
   "dependencies": {},
   "devDependencies": {
