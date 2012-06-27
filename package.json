@@ -7,7 +7,7 @@
     "stdout"
   ],
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "main": "./lib/out",
   "engines": {
     "node": ">= 0.4.x < 0.9.0"
@@ -23,8 +23,8 @@
   "bugs": {
     "url": "http://github.com/DamonOehlman/node-out/issues"
   },
-  
-  "scripts": { "test": "node test/main.js" },
-  
+  "scripts": {
+    "test": "node test/main.js"
+  },
   "contributors": []
 }
