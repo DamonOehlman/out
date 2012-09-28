@@ -2,7 +2,7 @@ var vows = require('vows'),
     assert = require('assert'),
     fs = require('fs'),
     path = require('path'),
-    out = require('../lib/out'),
+    out = require('../'),
     samplePath = path.resolve(__dirname, 'samples');
         
 var suite = vows.describe('Out Tests'),
