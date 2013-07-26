@@ -1,19 +1,12 @@
 {
   "name": "out",
   "description": "Tasty STDOUT",
-  "tags": [
-    "console",
-    "log",
-    "stdout"
-  ],
-  "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "0.4.3",
-  "engines": {
-    "node": ">= 0.4.x < 0.9.0"
-  },
-  "dependencies": {},
   "devDependencies": {
-    "vows": ">= 0.6.0"
+    "vows": "~0.7.0",
+    "jshint": "~2.1.4",
+    "emu": "0.0.2"
   },
   "repository": {
     "type": "git",
@@ -23,7 +16,17 @@
     "url": "http://github.com/DamonOehlman/node-out/issues"
   },
   "scripts": {
-    "test": "node test/main.js"
+    "gendocs": "cat index.js $(find *.js -not -path \"index.js\") | $(npm bin)/emu > README.md",
+    "test": "$(npm bin)/jshint *.js && node test/main.js"
   },
-  "contributors": []
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "logging",
+    "console",
+    "stdout"
+  ],
+  "license": "MIT"
 }
