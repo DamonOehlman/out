@@ -12,7 +12,7 @@ var suite = vows.describe('Out Tests'),
     
 function createTest(sample) {
     // replace sample output #[ placeholders with the correct text
-    sample.output = sample.output.replace(/\#\[/g, '\0x1B[');
+    sample.output = sample.output.replace(/\#\[/g, '\0\x1B[');
     
     return function() {
         // ensure we have input and output
