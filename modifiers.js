@@ -2,7 +2,12 @@
 'use strict';
 
 /**
-## modifiers
+  ## out modifiers
+
+  There are a number of modifiers include in the out module by default.
+  Primarily, the escape codes were gleaned from
+  [colors](https://github.com/Marak/colors.js).
+  
 **/
 var reModifier = /\!\{(.*?)\}(.*?)(?=(\!\{|$))/m;
 var reDelimiter = /(\s|\,|\+|\|)/;
