@@ -1,6 +1,6 @@
 {
   "name": "out",
-  "description": "Tasty STDOUT",
+  "description": "Colourful STDERR reporting for node libraries",
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "0.5.0",
   "devDependencies": {
@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/DamonOehlman/node-out.git"
+    "url": "https://bitbucket.org/DamonOehlman/node-out.git"
   },
   "bugs": {
-    "url": "http://github.com/DamonOehlman/node-out/issues"
+    "url": "https://bitbucket.org/DamonOehlman/node-out/issues"
   },
   "scripts": {
     "gendocs": "cat index.js $(find *.js -not -path \"index.js\") | $(npm bin)/emu > README.md",
@@ -26,7 +26,7 @@
   "keywords": [
     "logging",
     "console",
-    "stdout"
+    "stderr"
   ],
   "license": "MIT"
 }
