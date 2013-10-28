@@ -15,7 +15,7 @@
   },
   "scripts": {
     "gendocs": "gendocs > README.md",
-    "test": "$(npm bin)/jshint *.js && node test/main.js"
+    "test": "node test/main.js"
   },
   "main": "index.js",
   "directories": {
