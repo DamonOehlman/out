@@ -2,7 +2,7 @@
   "name": "out",
   "description": "Tasty STDOUT",
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "devDependencies": {
     "vows": "~0.7.0"
   },
