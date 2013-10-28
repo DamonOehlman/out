@@ -78,13 +78,20 @@ out.end = '\n';
 **/
 out.error = function() {
   var args = Array.prototype.slice.call(arguments);
+
+  // ensure that an error is formatted as the message
+  args = args.map(function(arg) {
+    return (arg instanceof Error) ? arg.message : arg;
+  });
+
+  // call out making things red :)
   out.apply(null, ['!{red}' + args.shift()].concat(args));
 };
 
 /**
   ### out.to(targets)
 
-  This is used to reset the output targets for writing output. By default, 
+  This is used to reset the output targets for writing output. By default,
   out will send output to stderr so that it doesn't pollute stdout.
 **/
 out.to = function(targets) {
