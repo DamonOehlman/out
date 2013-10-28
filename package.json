@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/DamonOehlman/node-out.git"
+    "url": "https://bitbucket.org/DamonOehlman/node-out.git"
   },
   "bugs": {
-    "url": "http://github.com/DamonOehlman/node-out/issues"
+    "url": "http://bitbucket.org/DamonOehlman/node-out/issues"
   },
   "scripts": {
     "gendocs": "gendocs > README.md",
