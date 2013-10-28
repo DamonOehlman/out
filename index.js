@@ -17,11 +17,6 @@ var out;
   - simple variable replacement
   - colorized output
 
-  [
-  ![Build Status]
-  (https://travis-ci.org/DamonOehlman/node-out.png?branch=master)
-  ](https://travis-ci.org/DamonOehlman/node-out)
-
   ## Example Usage
 
   ```js
