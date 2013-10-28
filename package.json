@@ -4,9 +4,7 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "0.5.0",
   "devDependencies": {
-    "vows": "~0.7.0",
-    "jshint": "~2.1.4",
-    "emu": "0.0.2"
+    "vows": "~0.7.0"
   },
   "repository": {
     "type": "git",
@@ -16,7 +14,7 @@
     "url": "http://github.com/DamonOehlman/node-out/issues"
   },
   "scripts": {
-    "gendocs": "cat index.js $(find *.js -not -path \"index.js\") | $(npm bin)/emu > README.md",
+    "gendocs": "gendocs > README.md",
     "test": "$(npm bin)/jshint *.js && node test/main.js"
   },
   "main": "index.js",
