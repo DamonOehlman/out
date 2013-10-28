@@ -10,7 +10,7 @@ one tidy convenient package:
 
 [![NPM](https://nodei.co/npm/out.png)](https://nodei.co/npm/out/)
 
-[![Build Status](https://drone.io/github.com/DamonOehlman/node-out/status.png)](https://drone.io/github.com/DamonOehlman/node-out/latest)
+[![Build Status](https://drone.io/bitbucket.org/DamonOehlman/node-out/status.png)](https://drone.io/bitbucket.org/DamonOehlman/node-out/latest)
 
 ## Example Usage
 
