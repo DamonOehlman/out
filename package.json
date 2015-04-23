@@ -1,17 +1,10 @@
 {
   "name": "out",
-  "description": "Tasty STDOUT",
+  "description": "Write formatted output to STDERR (other alternative channels)",
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "0.5.4",
   "devDependencies": {
     "vows": "~0.7.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/DamonOehlman/node-out.git"
-  },
-  "bugs": {
-    "url": "http://bitbucket.org/DamonOehlman/node-out/issues"
   },
   "scripts": {
     "gendocs": "gendocs > README.md",
@@ -26,5 +19,13 @@
     "console",
     "stdout"
   ],
-  "license": "MIT"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamonOehlman/out.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/out/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/out#readme"
 }
