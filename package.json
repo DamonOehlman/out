@@ -4,10 +4,11 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "1.0.0",
   "devDependencies": {
+    "embellish-readme": "^1.3.2",
     "tape": "^4.9.1"
   },
   "scripts": {
-    "gendocs": "gendocs > README.md",
+    "gendocs": "embellish README.md",
     "test": "node test/index.js"
   },
   "main": "index.js",
