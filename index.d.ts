@@ -1,12 +1,12 @@
 declare namespace out {
   interface Writer {
-    write(text: string, extra?: any);
+    write(text: string, extra?: any): void;
   }
 
   interface OutApi {
-    (text: string, ...values: any);
-    error(text: string, ...values: any);
-    to(writers: Writer[] | null);
+    (text: string, ...values: any): void;
+    error(text: string, ...values: any): void;
+    to(writers: Writer[] | null): void;
   }
 }
 
