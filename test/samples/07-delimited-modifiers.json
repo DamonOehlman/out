@@ -1,4 +1,4 @@
 {
-    "input": "!{green,blink}green and blinking!!!",
+    "input": "!{green|blink}green and blinking!!!",
     "output": "#[5m#[32mgreen and blinking!!!#[39m#[25m"
 }

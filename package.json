@@ -4,11 +4,11 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "1.0.0",
   "devDependencies": {
-    "vows": "^0.8.1"
+    "tape": "^4.9.1"
   },
   "scripts": {
     "gendocs": "gendocs > README.md",
-    "test": "node test/main.js"
+    "test": "node test/index.js"
   },
   "main": "index.js",
   "directories": {
