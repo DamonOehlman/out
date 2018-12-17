@@ -1,63 +1,24 @@
-/* jshint node: true */
-'use strict';
+const formatters = {};
+const reFormatHolders = /\{(\d+)(?=\})/g;
+const modifiers = require('./modifiers');
 
-var formatters = {};
-var reFormatHolders = /\{(\d+)(?=\})/g;
-var _targets = [process.stderr];
-var modifiers = require('./modifiers');
-var out;
+let targets = [process.stderr];
 
-/**
-  # out
-
-  This is a simple node module designed to give you the following features in
-  one tidy convenient package:
-
-  - stderr reporting
-  - simple variable replacement
-  - colorized output
-
-  ## Example Usage
-
-  ```js
-  var out = require('out');
-
-  // write a message to stderr
-  out('Hello');
-
-  // do a variable replacement in a message
-  out('Hello, my name is {0}', 'Bob');
-
-  // do some formatting of things
-  out('Hello, my name is !{bold}{0}', 'Bob');
-  ```
-
-  ## Reference
-**/
-
-/**
-  ### out(message, args*)
-
-  Send the message (with appropriate argument replacements applied) to
-  `stderr` (unless output has been directed somewhere else using `out.to`).
-**/
-out = module.exports = function(format) {
-  var formatter;
-  var output;
-  var ii;
-
+const out = (format, ...values) => {
   // if we have no format provided, then return the modifiers
   if (! format) {
     return modifiers;
   }
 
-  formatter = formatters[format] || createFormatter(modifiers.replace(format));
-  output = formatter.apply(null, Array.prototype.slice.call(arguments, 1));
+  // if we haven't already create the formatter do so now
+  if (!formatters[format]) {
+    formatters[format] = createFormatter(modifiers.replace(format));
+  }
+
+  const output = formatters[format](...values);
 
   // write the output to stdout
-  for (ii = _targets.length; ii--; ) {
-    _targets[ii].write(output + out.end);
-  }
+  targets.forEach((target) => target.write(output + out.end));
 
   // return the output so we can test as required
   return output;
@@ -65,74 +26,44 @@ out = module.exports = function(format) {
 
 // define what will be appended to the end of each write statement
 out.end = '\n';
+out.error = errorOut;
+out.to = setTargets;
 
-/**
-  ### out.error(err)
+module.exports = out;
 
-  An error helper for reporting exceptions.
-**/
-out.error = function() {
-  var args = Array.prototype.slice.call(arguments);
-
-  // ensure that an error is formatted as the message
-  args = args.map(function(arg) {
+function errorOut() {
+  const args = Array.from(arguments).map(function(arg) {
     return (arg instanceof Error) ? arg.message : arg;
   });
 
   // call out making things red :)
-  out.apply(null, ['!{red}' + args.shift()].concat(args));
-};
+  out(['!{red}' + args.shift()].concat(args));
+}
 
-/**
-  ### out.to(targets)
-
-  This is used to reset the output targets for writing output. By default,
-  out will send output to stderr so that it doesn't pollute stdout.
-**/
-out.to = function(targets) {
-  // reset the targets
-  _targets = [].concat(targets || undefined).filter(function(writer) {
-    return writer && typeof writer.write == 'function';
-  });
-};
-
-/* internal helpers */
+function setTargets(...newTargets) {
+  targets = newTargets.filter((writer) => writer && typeof writer.write == 'function');
+}
 
 function createFormatter(format) {
-  var matches = format.match(reFormatHolders);
-  var regexes = [];
-  var regexCount = 0;
-  var ii;
-  var argIndex;
+  const regexes = [];
 
-  // iterate through the matches
-  for (ii = matches ? matches.length : 0; ii--; ) {
-    argIndex = matches[ii].slice(1);
-
+  const matches = format.match(reFormatHolders);
+  for (let ii = matches ? matches.length : 0; ii--; ) {
+    const argIndex = matches[ii].slice(1);
     if (! regexes[argIndex]) {
-      regexes[argIndex] = new RegExp('\\{' + argIndex + '\\}', 'g');
-    } // if
-  } // for
+      regexes[argIndex] = new RegExp(`\\{${argIndex}\\}`, 'g');
+    }
+  }
 
   // update the regex count
-  regexCount = regexes.length;
-
-  // initialise the formatter
-  formatters[format] = function() {
-    var output = format;
-    var argValue;
-
-    for (ii = 0; ii < regexCount; ii++) {
-      argValue = arguments[ii];
-      if (typeof argValue == 'undefined') {
-        argValue = '';
-      } // if
-
+  const regexCount = regexes.length;
+  return (...values) => {
+    let output = format;
+    for (let ii = 0; ii < regexCount; ii++) {
+      const argValue = typeof values[ii] != 'undefined' ? values[ii] : '';
       output = output.replace(regexes[ii], argValue);
-    } // for
+    }
 
     return output;
   };
-
-  return formatters[format];
 }

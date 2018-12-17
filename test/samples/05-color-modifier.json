@@ -1,4 +1,5 @@
 {
-    "input": "!{green}green",
-    "output": "#[32mgreen#[39m"
+  "title": "Make it green",
+  "input": "!{green}green",
+  "output": "#[32mgreen#[39m"
 }
